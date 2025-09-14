@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Noble4U Junk Removal | Fast, Affordable, Local</title>
   <meta name="description" content="Noble4U Junk Removal serves Buffalo & Erie County, NY with same-day junk hauling, yard clean-ups, construction debris removal, and full clean-outs. Licensed & insured." />
-  <link rel="icon" href="assets/favicon.svg" />
+  <!-- Use the JPG as the browser tab icon too -->
+  <link rel="icon" href="assets/favicon.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
@@ -41,16 +42,16 @@
 
     /* Header / nav — bigger logo */
     header{border-bottom:1px solid var(--line); background:#fff; position:sticky; top:0; z-index:20}
-    .nav{display:flex; align-items:center; justify-content:space-between; height:88px} /* was 74px */
+    .nav{display:flex; align-items:center; justify-content:space-between; height:96px} /* taller for bigger logo */
     .brand{display:flex; align-items:center; gap:14px; font-weight:900}
-    .brand img{height:56px; width:auto} /* was ~40px */
+    .brand img{height:72px; width:auto; border-radius:10px} /* logo now bigger */
     nav a{padding:10px; color:#0f172a; font-weight:600}
     .cta{display:none}
     @media (min-width: 860px){.cta{display:inline-block}}
 
     /* Hero */
     .hero{padding:52px 0; background:linear-gradient(180deg,#eef4ff,#fff)}
-    .hero .grid{display:grid; gap:24px; grid-template-columns:1fr 1fr; align-items:center} /* was 1.2fr .8fr */
+    .hero .grid{display:grid; gap:24px; grid-template-columns:1fr 1fr; align-items:center}
 
     .hero h1{font-size: clamp(28px, 4vw, 44px); margin:8px 0}
     .hero p{color:var(--muted); max-width:60ch}
@@ -111,7 +112,8 @@
   <header>
     <div class="container nav">
       <a class="brand" href="#home">
-        <img src="assets/logo.svg" alt="Noble4U logo" />
+        <!-- Use favicon.jpg as the logo -->
+        <img src="assets/favicon.jpg" alt="Noble4U logo" />
         Noble4U Junk Removal
       </a>
       <nav>
@@ -151,7 +153,7 @@
           <div class="card estimate">
             <b>Instant estimate</b>
             <!-- Formspree: replace FORM_ID_HERE with your ID -->
-            <form action="https://formspree.io/f/xvgbngpw" method="POST">
+            <form action="https://formspree.io/f/FORM_ID_HERE" method="POST">
               <input type="hidden" name="_subject" value="New estimate request from Noble4U site" />
               <input type="hidden" name="_replyto" value="farhod.lapasov@gmail.com" />
               <input type="hidden" name="_next" value="https://noble4uinc.com/#thanks" />
@@ -391,7 +393,8 @@
     <div class="container foot">
       <div>
         <div class="brand">
-          <img src="assets/logo.svg" alt="Noble4U logo small" />
+          <!-- Use the same favicon.jpg at the bottom -->
+          <img src="assets/favicon.jpg" alt="Noble4U logo small" />
           Noble4U Junk Removal
         </div>
         <p class="muted" style="margin-top:8px">Eco-friendly disposal • Donations where possible • Up-front pricing</p>
