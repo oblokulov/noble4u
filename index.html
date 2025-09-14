@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Noble4U Junk Removal | Fast, Affordable, Local</title>
   <meta name="description" content="Noble4U Junk Removal serves Buffalo & Erie County, NY with same-day junk hauling, yard clean-ups, construction debris removal, and full clean-outs. Licensed & insured." />
-  <link rel="icon" href="assets/favicon.jpg" />
+  <link rel="icon" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
@@ -39,22 +39,31 @@
     .top .row{display:flex; gap:14px; align-items:center; justify-content:center; padding:10px 16px; font-size:14px}
     .top a{text-decoration:underline; color:#fff}
 
-    /* Header / nav */
+    /* Header / nav — bigger logo */
     header{border-bottom:1px solid var(--line); background:#fff; position:sticky; top:0; z-index:20}
-    .nav{display:flex; align-items:center; justify-content:space-between; height:74px}
-    .brand{display:flex; align-items:center; gap:12px; font-weight:900}
-    .brand img{height:42px; width:auto}
+    .nav{display:flex; align-items:center; justify-content:space-between; height:88px} /* was 74px */
+    .brand{display:flex; align-items:center; gap:14px; font-weight:900}
+    .brand img{height:56px; width:auto} /* was ~40px */
     nav a{padding:10px; color:#0f172a; font-weight:600}
     .cta{display:none}
     @media (min-width: 860px){.cta{display:inline-block}}
 
     /* Hero */
     .hero{padding:52px 0; background:linear-gradient(180deg,#eef4ff,#fff)}
-    .hero .grid{display:grid; gap:24px; grid-template-columns:1.2fr .8fr; align-items:center}
+    .hero .grid{display:grid; gap:24px; grid-template-columns:1fr 1fr; align-items:center} /* was 1.2fr .8fr */
+
     .hero h1{font-size: clamp(28px, 4vw, 44px); margin:8px 0}
     .hero p{color:var(--muted); max-width:60ch}
     .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow)}
     @media (max-width: 860px){.hero .grid{grid-template-columns:1fr}}
+
+    /* Larger, easier-to-use estimate form */
+    .estimate{max-width:560px; padding:18px}
+    .estimate input,
+    .estimate select,
+    .estimate textarea{font-size:16px; padding:14px}
+    .estimate .form-row{display:grid; grid-template-columns:1.2fr 1fr; gap:12px}
+    .estimate button{padding:16px 18px; font-size:16px}
 
     /* Sections */
     section{padding:52px 0}
@@ -102,7 +111,7 @@
   <header>
     <div class="container nav">
       <a class="brand" href="#home">
-        <img src="assets/favicon.jpg" alt="Noble4U logo" />
+        <img src="assets/logo.svg" alt="Noble4U logo" />
         Noble4U Junk Removal
       </a>
       <nav>
@@ -137,20 +146,22 @@
             </ol>
           </div>
         </div>
+
         <div>
-          <div class="card">
+          <div class="card estimate">
             <b>Instant estimate</b>
-            <!-- Formspree: replace FORM_ID with your ID -->
-            <form action="https://formspree.io/f/FORM_ID" method="POST">
+            <!-- Formspree: replace FORM_ID_HERE with your ID -->
+            <form action="https://formspree.io/f/xvgbngpw" method="POST">
               <input type="hidden" name="_subject" value="New estimate request from Noble4U site" />
               <input type="hidden" name="_replyto" value="farhod.lapasov@gmail.com" />
-              <div class="form-row" style="display:grid; grid-template-columns:1fr 1fr; gap:10px">
+              <input type="hidden" name="_next" value="https://noble4uinc.com/#thanks" />
+              <div class="form-row">
                 <input name="name" placeholder="Name" required />
                 <input name="phone" placeholder="Phone" required />
               </div>
               <input name="email" placeholder="Email (optional)" />
-              <select name="category">
-                <option selected>What are you removing?</option>
+              <select name="category" required>
+                <option value="" selected disabled>What are you removing?</option>
                 <option>Furniture</option>
                 <option>Appliances</option>
                 <option>Yard Waste</option>
@@ -162,6 +173,7 @@
             </form>
           </div>
         </div>
+
       </div>
     </div>
   </main>
@@ -379,7 +391,7 @@
     <div class="container foot">
       <div>
         <div class="brand">
-          <img src="assets/favicon.jpg" alt="Noble4U logo small" />
+          <img src="assets/logo.svg" alt="Noble4U logo small" />
           Noble4U Junk Removal
         </div>
         <p class="muted" style="margin-top:8px">Eco-friendly disposal • Donations where possible • Up-front pricing</p>
