@@ -1,80 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Noble4U Junk Removal | Fast, Affordable, Local</title>
-  <meta name="description" content="Noble4U Junk Removal. Same‑day pickup for furniture, appliances, yard waste, and construction debris. Licensed & insured.">
-  <link rel="icon" href="assets/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Noble4U Junk Removal serves Buffalo & Erie County, NY with same-day junk hauling, yard clean-ups, construction debris removal, and full clean-outs. Licensed & insured." />
+  <link rel="icon" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+
   <style>
     :root{
-      --brand:#0ea5e9; /* sky */
-      --brand-dark:#0284c7;
+      --brand:#1e3a8a;         /* navy */
+      --brand-dark:#142d6b;    /* deeper navy */
+      --accent:#e11d48;        /* crimson red */
       --bg:#ffffff;
       --text:#0f172a;
       --muted:#475569;
       --line:#e2e8f0;
       --card:#f8fafc;
       --radius:14px;
+      --shadow:0 6px 24px rgba(0,0,0,.08);
     }
     *{box-sizing:border-box}
     body{margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--text); background:var(--bg)}
     a{color:inherit; text-decoration:none}
     img{max-width:100%; display:block}
     .container{max-width:1080px; margin:auto; padding:0 16px}
-    .btn{display:inline-block; padding:14px 18px; border-radius:12px; font-weight:700; background:var(--brand); color:#fff}
+
+    .btn{display:inline-block; padding:14px 18px; border-radius:12px; font-weight:700; background:var(--brand); color:#fff; box-shadow:var(--shadow)}
     .btn:hover{background:var(--brand-dark)}
+    .btn-accent{background:var(--accent)}
+    .btn-accent:hover{filter:brightness(.95)}
 
     /* Top bar */
-    .top{background:#0b1220; color:#e6f1ff}
+    .top{background:var(--brand); color:#ffffff}
     .top .row{display:flex; gap:14px; align-items:center; justify-content:center; padding:10px 16px; font-size:14px}
-    .top a{color:#e6f1ff; text-decoration:underline}
+    .top a{text-decoration:underline; color:#fff}
 
-    /* Header */
+    /* Header / nav */
     header{border-bottom:1px solid var(--line); background:#fff; position:sticky; top:0; z-index:20}
-    .nav{display:flex; align-items:center; justify-content:space-between; height:70px}
-    .brand{display:flex; align-items:center; gap:10px; font-weight:800}
-    .logo{width:40px; height:40px; border-radius:10px; display:grid; place-items:center; background:var(--brand); color:#fff}
-    .nav a{padding:8px 10px; color:#0f172a}
+    .nav{display:flex; align-items:center; justify-content:space-between; height:74px}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:900}
+    .brand img{height:42px; width:auto}
+    nav a{padding:10px; color:#0f172a; font-weight:600}
     .cta{display:none}
-    @media (min-width: 860px){.cta{display:block}}
+    @media (min-width: 860px){.cta{display:inline-block}}
 
     /* Hero */
-    .hero{padding:48px 0; background:linear-gradient(180deg,#f0f9ff,#fff)}
+    .hero{padding:52px 0; background:linear-gradient(180deg,#eef4ff,#fff)}
     .hero .grid{display:grid; gap:24px; grid-template-columns:1.2fr .8fr; align-items:center}
     .hero h1{font-size: clamp(28px, 4vw, 44px); margin:8px 0}
-    .hero p{color:var(--muted); max-width:58ch}
-    .hero .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:14px}
+    .hero p{color:var(--muted); max-width:60ch}
+    .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow)}
     @media (max-width: 860px){.hero .grid{grid-template-columns:1fr}}
 
-    /* Simple section */
-    section{padding:48px 0}
+    /* Sections */
+    section{padding:52px 0}
     .section-head{margin-bottom:18px}
     .section-head h2{margin:0; font-size:28px}
     .muted{color:var(--muted)}
-    .grid-3{display:grid; gap:14px; grid-template-columns:repeat(3,1fr)}
-    .grid-2{display:grid; gap:14px; grid-template-columns:repeat(2,1fr)}
+    .grid-3{display:grid; gap:16px; grid-template-columns:repeat(3,1fr)}
+    .grid-2{display:grid; gap:16px; grid-template-columns:repeat(2,1fr)}
     @media (max-width: 860px){.grid-3,.grid-2{grid-template-columns:1fr}}
-    .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:16px}
-    .kicker{font-size:13px; color:#0369a1; font-weight:700; letter-spacing:.2px}
+    .kicker{font-size:13px; color:var(--brand); font-weight:800; letter-spacing:.2px}
 
-    /* Pricing table */
+    /* Pricing */
     .price{display:flex; align-items:baseline; gap:6px; margin:6px 0 10px}
     .price b{font-size:26px}
 
-    /* List */
+    /* Lists */
     ul.clean{list-style:none; padding:0; margin:0}
     ul.clean li{padding:6px 0; border-bottom:1px dashed var(--line)}
-
-    /* Contact */
-    form{display:grid; gap:10px}
-    input, textarea, select{width:100%; padding:12px; border:1px solid var(--line); border-radius:10px}
-    textarea{min-height:120px}
-    .form-row{display:grid; grid-template-columns:1fr 1fr; gap:10px}
-    @media (max-width: 640px){.form-row{grid-template-columns:1fr}}
 
     /* Footer */
     footer{border-top:1px solid var(--line); background:#fff}
@@ -84,7 +82,7 @@
 
     /* Sticky mobile call bar */
     .callbar{position:fixed; left:0; right:0; bottom:0; background:#0b1220; color:#fff; display:flex; gap:12px; align-items:center; justify-content:center; padding:10px; z-index:30}
-    .callbar a{background:var(--brand); padding:10px 14px; border-radius:10px; font-weight:700}
+    .callbar a{background:var(--accent); padding:10px 14px; border-radius:10px; font-weight:700}
     @media (min-width: 860px){.callbar{display:none}}
   </style>
 </head>
@@ -93,9 +91,9 @@
   <div class="top">
     <div class="container">
       <div class="row">
-        <span>Same‑day & next‑day service • Licensed & insured</span>
+        <span>Same-day & next-day service • Mon–Sat 8am–6pm • Licensed & insured</span>
         <span>•</span>
-        <a href="tel:+12260000000">Call (226) 000‑0000</a>
+        <a href="tel:+12260000000">Call (226) 000-0000</a>
       </div>
     </div>
   </div>
@@ -103,13 +101,18 @@
   <!-- Header -->
   <header>
     <div class="container nav">
-      <a class="brand" href="#home"><span class="logo">N4</span> Noble4U Junk Removal</a>
+      <a class="brand" href="#home">
+        <img src="assets/logo.svg" alt="Noble4U logo" />
+        Noble4U Junk Removal
+      </a>
       <nav>
+        <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#pricing">Pricing</a>
         <a href="#areas">Service Areas</a>
+        <a href="#gallery">Gallery</a>
         <a href="#faq">FAQ</a>
-        <a href="#contact" class="cta btn">Free Estimate</a>
+        <a href="#contact" class="cta btn btn-accent">Free Estimate</a>
       </nav>
     </div>
   </header>
@@ -120,16 +123,16 @@
       <div class="grid">
         <div>
           <h1>Fast, affordable junk removal—done for you</h1>
-          <p class="muted">Furniture, appliances, yard waste, contractor debris, cleanouts & more. We show up on time, load everything, sweep up, and dispose responsibly.</p>
+          <p class="muted">Furniture, appliances, yard waste, contractor debris, full clean-outs & more. We show up on time, load everything, sweep up, and dispose responsibly.</p>
           <div style="display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 8px">
-            <a class="btn" href="tel:+12260000000">📞 (226) 000‑0000</a>
-            <a class="btn" style="background:#10b981" href="#contact">Get a Quote</a>
+            <a class="btn" href="tel:+12260000000">📞 (226) 000-0000</a>
+            <a class="btn btn-accent" href="#contact">Get a Quote</a>
           </div>
           <div class="card" style="margin-top:12px">
             <b>How it works</b>
             <ol style="margin:8px 0 0; padding-left:18px; color:var(--muted)">
-              <li>Text us a photo or fill the form</li>
-              <li>We confirm price & arrival window</li>
+              <li>Text us photos or fill the form</li>
+              <li>We confirm your price & arrival window</li>
               <li>We haul it away & sweep up</li>
             </ol>
           </div>
@@ -137,13 +140,16 @@
         <div>
           <div class="card">
             <b>Instant estimate</b>
-            <form>
-              <div class="form-row">
-                <input placeholder="Name" required>
-                <input placeholder="Phone" required>
+            <!-- Formspree: replace FORM_ID with your ID -->
+            <form action="https://formspree.io/f/FORM_ID" method="POST">
+              <input type="hidden" name="_subject" value="New estimate request from Noble4U site" />
+              <input type="hidden" name="_replyto" value="farhod.lapasov@gmail.com" />
+              <div class="form-row" style="display:grid; grid-template-columns:1fr 1fr; gap:10px">
+                <input name="name" placeholder="Name" required />
+                <input name="phone" placeholder="Phone" required />
               </div>
-              <input placeholder="Email (optional)">
-              <select>
+              <input name="email" placeholder="Email (optional)" />
+              <select name="category">
                 <option selected>What are you removing?</option>
                 <option>Furniture</option>
                 <option>Appliances</option>
@@ -151,8 +157,8 @@
                 <option>Construction Debris</option>
                 <option>Garage / Estate Cleanout</option>
               </select>
-              <textarea placeholder="Tell us what you have (or paste a link to photos)"></textarea>
-              <button class="btn" type="submit">Request Estimate</button>
+              <textarea name="message" placeholder="Tell us what you have (or paste a link to photos)"></textarea>
+              <button class="btn btn-accent" type="submit">Request Estimate</button>
             </form>
           </div>
         </div>
@@ -160,20 +166,69 @@
     </div>
   </main>
 
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <h2>About Noble4U</h2>
+        <p class="muted">Professional junk removal & clean-ups across Buffalo and Erie County, NY.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <b>Who we are</b>
+          <p class="muted">We remove old furniture, appliances, yard waste, and renovation debris and handle full garage, basement, and estate clean-outs. Our crews do all the lifting, haul everything away, and sweep up after.</p>
+          <ul class="clean">
+            <li>Residential & commercial service</li>
+            <li>Transparent, up-front quotes</li>
+            <li>Items donated or recycled when possible</li>
+          </ul>
+        </div>
+        <div class="card">
+          <b>What you can expect</b>
+          <ul class="clean">
+            <li>Same-day or next-day availability</li>
+            <li>Licensed & insured teams</li>
+            <li>Clear communication from booking to sweep-up</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Services -->
   <section id="services">
     <div class="container">
       <div class="section-head">
         <h2>What we take</h2>
-        <p class="muted">If it’s non‑hazardous and two people can lift it, we can haul it.</p>
+        <p class="muted">If it’s non-hazardous and two people can lift it, we can haul it.</p>
       </div>
       <div class="grid-3">
         <div class="card"><b>Furniture</b><ul class="clean"><li>Sofas, mattresses, dressers</li><li>Office desks & chairs</li><li>Bedroom sets</li></ul></div>
         <div class="card"><b>Appliances</b><ul class="clean"><li>Fridges, stoves, washers</li><li>AC units & water heaters</li><li>Microwaves</li></ul></div>
-        <div class="card"><b>Cleanouts</b><ul class="clean"><li>Basement & garage</li><li>Storage & estates</li><li>Rental turnovers</li></ul></div>
+        <div class="card"><b>Clean-outs</b><ul class="clean"><li>Garage & basement</li><li>Storage & estates</li><li>Rental turnovers</li></ul></div>
         <div class="card"><b>Yard Waste</b><ul class="clean"><li>Branches & brush</li><li>Bagged leaves & soil</li><li>Fences, lumber</li></ul></div>
         <div class="card"><b>Construction</b><ul class="clean"><li>Drywall & lumber</li><li>Tile & carpet</li><li>Renovation debris</li></ul></div>
-        <div class="card"><b>Extras</b><ul class="clean"><li>Hot tubs (cut‑up)</li><li>Pianos & safes</li><li>Sheds & playsets</li></ul></div>
+        <div class="card"><b>Extras</b><ul class="clean"><li>Hot tubs (cut-up)</li><li>Pianos & safes</li><li>Sheds & playsets</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" style="background:#ffffff">
+    <div class="container">
+      <div class="section-head">
+        <h2>Recent jobs</h2>
+        <p class="muted">Snapshots from clean-outs, yard waste, construction debris & more.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><img src="assets/photos/gallery-1.jpg" alt="Noble4U junk removal photo 1" /></div>
+        <div class="card"><img src="assets/photos/gallery-2.jpg" alt="Noble4U junk removal photo 2" /></div>
+        <div class="card"><img src="assets/photos/gallery-3.jpg" alt="Noble4U junk removal photo 3" /></div>
+        <div class="card"><img src="assets/photos/gallery-4.jpg" alt="Noble4U junk removal photo 4" /></div>
+        <div class="card"><img src="assets/photos/gallery-5.jpg" alt="Noble4U junk removal photo 5" /></div>
+        <div class="card"><img src="assets/photos/gallery-6.jpg" alt="Noble4U junk removal photo 6" /></div>
+        <div class="card"><img src="assets/photos/gallery-7.jpg" alt="Noble4U junk removal photo 7" /></div>
+        <div class="card"><img src="assets/photos/gallery-8.jpg" alt="Noble4U junk removal photo 8" /></div>
       </div>
     </div>
   </section>
@@ -182,39 +237,66 @@
   <section id="pricing" style="background:#f8fafc">
     <div class="container">
       <div class="section-head">
-        <h2>Simple, volume‑based pricing</h2>
-        <p class="muted">You only pay for the space your junk takes up in our truck. Includes labor & disposal.</p>
+        <h2>Simple, up-front pricing</h2>
+        <p class="muted">Pricing based on load size or hourly crew rates. Quotes confirmed before any work begins.</p>
       </div>
       <div class="grid-3">
         <div class="card">
-          <div class="kicker">MINI LOAD</div>
-          <div class="price"><b>$99–$149</b><span class="muted">/ small items</span></div>
+          <div class="kicker">JUNK REMOVAL / HAULING</div>
+          <div class="price"><b>$395</b><span class="muted"> per load</span></div>
           <ul class="clean">
-            <li>1–2 items</li>
-            <li>Curbside discount available</li>
-            <li>Great for single pickups</li>
+            <li>Includes labor & disposal</li>
+            <li>Photos for firm quote</li>
+            <li>Great for household clutter</li>
           </ul>
         </div>
         <div class="card">
-          <div class="kicker">HALF TRUCK</div>
-          <div class="price"><b>$299–$399</b><span class="muted">/ avg jobs</span></div>
+          <div class="kicker">YARD CLEAN-UP</div>
+          <div class="price"><b>$95–$295</b><span class="muted"> per job</span></div>
           <ul class="clean">
-            <li>Most apartments / garages</li>
-            <li>Includes labor & dump fees</li>
-            <li>No surprises</li>
+            <li>Branches, brush, leaves, soil</li>
+            <li>Fences & lumber removal</li>
+            <li>Pricing based on volume</li>
           </ul>
         </div>
         <div class="card">
-          <div class="kicker">FULL TRUCK</div>
-          <div class="price"><b>$499–$699</b><span class="muted">/ big cleanouts</span></div>
+          <div class="kicker">FURNITURE PICK-UP & DELIVERY</div>
+          <div class="price"><b>$95–$225</b><span class="muted"> per trip</span></div>
           <ul class="clean">
-            <li>House & estate cleanouts</li>
-            <li>Contractor / reno debris</li>
-            <li>Multiple loads discounted</li>
+            <li>Bulky items handled with care</li>
+            <li>Stairs/access may affect price</li>
+            <li>Multi-item discount available</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="kicker">CONSTRUCTION CLEAN-UP</div>
+          <div class="price"><b>$50/hr</b><span class="muted"> (2 team members)</span></div>
+          <ul class="clean">
+            <li>Drywall, lumber, tile, carpet</li>
+            <li>Site sweeping included</li>
+            <li>Dump fees included in rate</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="kicker">STORM CLEAN-UP</div>
+          <div class="price"><b>$50/hr</b><span class="muted"> (2 team members)</span></div>
+          <ul class="clean">
+            <li>Fast response after storms</li>
+            <li>Branches & damaged material</li>
+            <li>Disposal handled by our crew</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="kicker">GARAGE / BASEMENT CLEAN-OUT</div>
+          <div class="price"><b>$75–$395</b><span class="muted"> per job</span></div>
+          <ul class="clean">
+            <li>Full clean-outs & sweep-up</li>
+            <li>Rental turnovers & estates</li>
+            <li>Volume-based pricing</li>
           </ul>
         </div>
       </div>
-      <p class="muted" style="margin-top:10px">*Final price depends on volume, weight, stairs, and site conditions. Text photos for a firm quote.</p>
+      <p class="muted" style="margin-top:10px">Final price may vary based on volume, weight, stairs, and site conditions. Text photos for a firm quote.</p>
     </div>
   </section>
 
@@ -223,12 +305,24 @@
     <div class="container">
       <div class="section-head">
         <h2>Service Areas</h2>
-        <p class="muted">Proudly serving London, ON and surrounding communities.</p>
+        <p class="muted">Proudly serving Buffalo and Erie County, NY.</p>
       </div>
       <div class="grid-3">
-        <div class="card"><b>London</b><ul class="clean"><li>Downtown</li><li>North / South / East</li><li>Byron • Masonville</li></ul></div>
-        <div class="card"><b>Middlesex</b><ul class="clean"><li>St. Thomas</li><li>Strathroy</li><li>Komoka • Kilworth</li></ul></div>
-        <div class="card"><b>Nearby</b><ul class="clean"><li>Woodstock</li><li>Ingersoll</li><li>St. Marys</li></ul></div>
+        <div class="card"><b>Buffalo</b><ul class="clean"><li>All neighborhoods</li><li>Downtown & Elmwood</li><li>North & South Buffalo</li></ul></div>
+        <div class="card"><b>Erie County</b><ul class="clean"><li>Amherst • Cheektowaga</li><li>Tonawanda • West Seneca</li><li>Hamburg • Orchard Park</li></ul></div>
+        <div class="card"><b>Nearby</b><ul class="clean"><li>Niagara Falls</li><li>North Tonawanda</li><li>Lackawanna & more</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section id="why" style="background:#f8fafc">
+    <div class="container">
+      <div class="section-head"><h2>Why choose Noble4U?</h2></div>
+      <div class="grid-3">
+        <div class="card"><b>Fast & reliable</b><p class="muted">Same-day or next-day scheduling. Most jobs done in a single visit.</p></div>
+        <div class="card"><b>Licensed & insured</b><p class="muted">Your property is protected. Crews are trained, professional, and polite.</p></div>
+        <div class="card"><b>Eco-friendly</b><p class="muted">We recycle and donate items whenever possible to reduce landfill waste.</p></div>
       </div>
     </div>
   </section>
@@ -251,7 +345,7 @@
       <div class="section-head"><h2>FAQ</h2></div>
       <div class="grid-2">
         <div class="card"><b>Do I need to move items outside?</b><p class="muted">No. Our crew can remove items from anywhere on your property and sweep up after.</p></div>
-        <div class="card"><b>What can’t you take?</b><p class="muted">Hazardous chemicals, paints, oils, propane, and bio‑waste. Ask about special handling.</p></div>
+        <div class="card"><b>What can’t you take?</b><p class="muted">Hazardous chemicals, paints, oils, propane, and bio-waste. Ask about special handling.</p></div>
         <div class="card"><b>Are you insured?</b><p class="muted">Yes, fully licensed & insured. COI available upon request for property managers.</p></div>
         <div class="card"><b>How do you price?</b><p class="muted">By volume used in the truck, plus any weight or access surcharges if applicable.</p></div>
       </div>
@@ -263,18 +357,18 @@
     <div class="container">
       <div class="section-head">
         <h2>Ready to clear the clutter?</h2>
-        <p class="muted">Call now or send photos for a fast, no‑obligation estimate.</p>
+        <p class="muted">Call now or send photos for a fast, no-obligation estimate.</p>
       </div>
       <div class="grid-2">
         <div class="card">
           <b>Call or text</b>
-          <p class="muted" style="margin:6px 0 10px">(226) 000‑0000 • Mon–Sat 8am–7pm</p>
-          <a class="btn" href="tel:+12260000000">Call (226) 000‑0000</a>
+          <p class="muted" style="margin:6px 0 10px">(226) 000-0000 • Mon–Sat 8am–6pm</p>
+          <a class="btn" href="tel:+12260000000">Call (226) 000-0000</a>
         </div>
         <div class="card">
           <b>Email</b>
           <p class="muted" style="margin:6px 0 10px">Prefer email? We reply quickly.</p>
-          <a class="btn" href="mailto:hello@noble4u.ca">hello@noble4u.ca</a>
+          <a class="btn btn-accent" href="mailto:farhod.lapasov@gmail.com">farhod.lapasov@gmail.com</a>
         </div>
       </div>
     </div>
@@ -284,8 +378,11 @@
   <footer>
     <div class="container foot">
       <div>
-        <div class="brand"><span class="logo">N4</span> Noble4U Junk Removal</div>
-        <p class="muted" style="margin-top:8px">Eco‑friendly disposal • Donations where possible • Up‑front pricing</p>
+        <div class="brand">
+          <img src="assets/logo.svg" alt="Noble4U logo small" />
+          Noble4U Junk Removal
+        </div>
+        <p class="muted" style="margin-top:8px">Eco-friendly disposal • Donations where possible • Up-front pricing</p>
       </div>
       <div>
         <b>Company</b>
@@ -298,9 +395,9 @@
       <div>
         <b>Contact</b>
         <ul class="clean">
-          <li><a href="tel:+12260000000">(226) 000‑0000</a></li>
-          <li><a href="mailto:hello@noble4u.ca">hello@noble4u.ca</a></li>
-          <li>London, Ontario</li>
+          <li><a href="tel:+12260000000">(226) 000-0000</a></li>
+          <li><a href="mailto:farhod.lapasov@gmail.com">farhod.lapasov@gmail.com</a></li>
+          <li>Buffalo, NY</li>
         </ul>
       </div>
     </div>
@@ -310,8 +407,8 @@
   <!-- Mobile call bar -->
   <div class="callbar">
     <strong>Need it gone?</strong>
-    <a href="tel:+12260000000">Call (226) 000‑0000</a>
-    <a href="#contact" style="background:#10b981">Get a Quote</a>
+    <a href="tel:+12260000000">Call (226) 000-0000</a>
+    <a href="#contact">Get a Quote</a>
   </div>
 
   <script>
